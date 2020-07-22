@@ -1,0 +1,11 @@
+version: '3'
+services:
+  database:
+    image: postgres:11
+    container_name: snackxpress-bd
+    ports:
+      - 7778:5432
+    environment:
+      POSTGRES_DB: snackxpress
+      POSTGRES_USER: snackxpress
+      POSTGRES_PASSWORD: snackxpress123

@@ -1,0 +1,14 @@
+server:
+  port: 8082
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:7778/snackxpress?user=snackxpress&password=snackxpress123&useSSl=false
+    username: snackxpress
+    password: snackxpress123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
