@@ -19,16 +19,16 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class Stock extends AbstractEntity {
 
-    private Long entity_id;
+    private Long entityId;
 
-    private
+    private STOCK_TYPE type;
 
     private Integer quantity;
 
     public static enum STOCK_TYPE {
 
         PRODUCT("PRODUTO"),
-        INGREDIENT("Ingrediente");
+        INGREDIENT("INGREDIENTE");
 
         private String desc;
 

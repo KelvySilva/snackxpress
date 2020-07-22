@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 /**
  * ProductBox é o produto que é composto por dois ou mais
  * produtos ProductInd e/ou ProductComp
@@ -13,33 +15,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProductBox extends Product implements Stockable {
+public class ProductBox extends Product{
 
-    @Override
-    public Stock add(Stock stock) {
-        stock.setProduct(this);
-        stock.setQuantity( stock.getQuantity() + 1);
-        return stock;
-    }
+    private List<Product> productList;
 
-    @Override
-    public Stock add(Stock stock, Integer number) {
-        stock.setProduct(this);
-        stock.setQuantity( stock.getQuantity() + number);
-        return stock;
-    }
-
-    @Override
-    public Stock subtract(Stock stock) {
-        stock.setProduct(this);
-        stock.setQuantity( stock.getQuantity() - 1);
-        return stock;
-    }
-
-    @Override
-    public Stock subtract(Stock stock, Integer numero) {
-        stock.setProduct(this);
-        stock.setQuantity( stock.getQuantity() - numero);
-        return stock;
-    }
+    
 }
