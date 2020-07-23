@@ -1,8 +1,6 @@
 package br.com.sg.snackxpress.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -12,5 +10,5 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProductInd extends Product {
+public class ProductInd extends AbstractProduct {
 }

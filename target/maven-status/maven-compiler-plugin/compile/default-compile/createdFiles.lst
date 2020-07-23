@@ -1,0 +1,12 @@
+br\com\sg\snackxpress\domain\Stock$STOCK_TYPE.class
+br\com\sg\snackxpress\domain\Product.class
+br\com\sg\snackxpress\domain\ProductBox.class
+br\com\sg\snackxpress\domain\AbstractEntity.class
+br\com\sg\snackxpress\enumerator\UnitMeasurement.class
+br\com\sg\snackxpress\SnackxpressApplicationStart.class
+br\com\sg\snackxpress\domain\ProductComp.class
+br\com\sg\snackxpress\domain\ProductInd.class
+br\com\sg\snackxpress\enumerator\UnitMeasurement$UM.class
+br\com\sg\snackxpress\domain\Stock.class
+br\com\sg\snackxpress\domain\Ingredient.class
+br\com\sg\snackxpress\intereface\Stockable.class

@@ -1,4 +1,4 @@
-package br.com.sg.snackxpress.intereface;
+package br.com.sg.snackxpress.domain;
 
 import br.com.sg.snackxpress.domain.Stock;
 

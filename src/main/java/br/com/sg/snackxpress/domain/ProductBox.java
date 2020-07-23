@@ -1,9 +1,6 @@
 package br.com.sg.snackxpress.domain;
 
-import br.com.sg.snackxpress.intereface.Stockable;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
@@ -15,9 +12,9 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ProductBox extends Product{
+public class ProductBox extends AbstractProduct {
 
-    private List<Product> productList;
+    private List<AbstractProduct> productList;
 
     
 }

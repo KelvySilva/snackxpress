@@ -7,33 +7,27 @@ import lombok.Setter;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
-
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product extends AbstractEntity {
+public class Recipe extends AbstractEntity {
 
-    @NotBlank(message = "Nome não pode ser vazio ou nulo")
     @NotEmpty
     @NonNull
     @NotNull
+    @NotBlank(message = "Nome não pode ser vazio ou nulo")
     private String name;
 
-    @NotBlank(message = "Preço não pode ser vazio ou nulo")
-    @NotEmpty
-    @NonNull
-    @NotNull
-    private BigDecimal price;
-
-
-
-
+    @OneToMany
+    private List<Ingredient> ingredientList;
 
 }

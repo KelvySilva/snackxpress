@@ -1,15 +1,9 @@
 package br.com.sg.snackxpress.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import java.util.List;
+import javax.persistence.OneToOne;
 
 /**
  * ProductComp é o produto que é composto por Ingredient e/ou
@@ -18,9 +12,9 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ProductComp extends Product {
+public class ProductComp extends AbstractProduct {
 
-    @ManyToMany
-    private List<Ingredient> ingredients;
+    @OneToOne
+    private Recipe recipe;
 
 }
