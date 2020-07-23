@@ -17,9 +17,6 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class Stock extends AbstractEntity {
 
-    @NotNull
-    @NotEmpty
-    @NotBlank
     private Integer quantity;
 
 }

@@ -6,11 +6,11 @@ import java.io.Serializable;
 
 public interface Stockable extends Serializable {
 
-    Stock add(Stock stock);
+    void add();
 
-    Stock add(Stock stock, Integer number);
+    void add(Integer number);
 
-    Stock subtract(Stock stock);
+    void subtract();
 
-    Stock subtract(Stock stock, Integer numero);
+    void subtract(Integer numero);
 }

@@ -36,6 +36,7 @@ public class IngredientService {
         return this.repository.save(ingredient);
     }
 
+    @Transactional
     public Ingredient updateOne(Long id, Ingredient ingredient) {
         Optional<Ingredient> optionalIngredient = this.repository.findById(id);
         if (optionalIngredient.isPresent()){

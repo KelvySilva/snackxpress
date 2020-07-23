@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.NonNull;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
@@ -26,22 +27,18 @@ public class AbstractProduct extends AbstractEntity {
     @NonNull
     @NotNull
     @NotBlank(message = "Nome não pode ser vazio ou nulo")
-    private String name;
+    protected String name;
 
     @NotEmpty
     @NonNull
     @NotNull
     @NotBlank(message = "Preço não pode ser vazio ou nulo")
-    private StringBuffer description;
+    protected StringBuffer description;
 
-    @NotEmpty
-    @NonNull
-    @NotNull
-    @NotBlank(message = "Preço não pode ser vazio ou nulo")
-    private BigDecimal price;
+    protected BigDecimal price;
 
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     protected Stock stock;
 
 

@@ -6,9 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -27,7 +25,6 @@ public class Recipe extends AbstractEntity {
     @NotBlank(message = "Nome não pode ser vazio ou nulo")
     private String name;
 
-    @OneToMany
-    private List<Ingredient> ingredientList;
+
 
 }
