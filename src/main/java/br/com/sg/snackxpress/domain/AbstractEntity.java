@@ -21,4 +21,12 @@ public class AbstractEntity implements Serializable {
     @GeneratedValue
     private Long id;
 
+    /**
+     * API's e Ordem de Cadastro
+     * -Ingredient
+     * -Composite
+     * -Recipe
+     * -ProductFinal
+     */
+
 }
