@@ -5,10 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -18,10 +18,14 @@ import java.util.List;
 @AllArgsConstructor
 public class Recipe extends AbstractEntity {
 
-    @ManyToMany
-    @Column(nullable = true)
-    private List<Composite> composites;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    private String name;
 
-    @OneToOne
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<Composite> composities;
+
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private ProductFinal productFinal;
 }

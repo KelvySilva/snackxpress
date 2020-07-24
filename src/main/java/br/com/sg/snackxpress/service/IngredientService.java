@@ -39,18 +39,32 @@ public class IngredientService {
     @Transactional
     public Ingredient updateOne(Long id, Ingredient ingredient) {
         Optional<Ingredient> optionalIngredient = this.repository.findById(id);
-        if (optionalIngredient.isPresent()){
-
-            Ingredient update = optionalIngredient.get();
-            
-            if (Objects.nonNull(ingredient.getStock()) && !(update.getStock().equals(ingredient.getStock()))) {
-                update.setStock(ingredient.getStock());
-            }
-            if (Objects.nonNull(ingredient.getName()) && !(update.getName().equals(ingredient.getName()))) {
-                update.setName(ingredient.getName());
-            }
-
+        if (!optionalIngredient.isPresent()){
+            throw new ResourceNotFoundException(String.format("O ingrediente codigo %s não existe.", id));
         }
-        return null;
+        Ingredient update = optionalIngredient.get();
+
+        update.setId(id);
+
+        if (Objects.nonNull(ingredient.getName()) && !(update.getName().equals(ingredient.getName()))) {
+            update.setName(ingredient.getName());
+        }
+        if (Objects.nonNull(ingredient.getDescription()) && !(update.getDescription().equals(ingredient.getDescription()))) {
+            update.setDescription(ingredient.getDescription());
+        }
+        if (Objects.nonNull(ingredient.getCost()) && !(update.getCost().equals(ingredient.getCost()))) {
+            update.setCost(ingredient.getCost());
+        }
+        if (Objects.nonNull(ingredient.getType()) && !(update.getType().equals(ingredient.getType()))) {
+            update.setType(ingredient.getType());
+        }
+        if (
+                Objects.nonNull(ingredient.getStock()) &&
+                !(update.getStock().equals(ingredient.getStock())) &&
+                Objects.nonNull(ingredient.getStock().getId())
+        ) {
+            update.setStock(ingredient.getStock());
+        }
+        return this.repository.saveAndFlush(update);
     }
 }

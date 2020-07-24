@@ -17,7 +17,7 @@ public class IngredientAPI {
         this.service = service;
     }
 
-    @GetMapping(path = "/protected/ingredient")
+    @GetMapping(path = "/protected/ingredients")
     public ResponseEntity listall() {
         return ResponseEntity.ok(this.service.listall());
     }
@@ -33,7 +33,7 @@ public class IngredientAPI {
     }
 
     @PutMapping(path = "/admin/ingredient/{id}")
-    public ResponseEntity updateOne(@RequestParam Long id, @RequestBody Ingredient ingredient) {
+    public ResponseEntity updateOne(@PathVariable Long id, @RequestBody Ingredient ingredient) {
         return ResponseEntity.ok(this.service.updateOne(id, ingredient));
     }
 

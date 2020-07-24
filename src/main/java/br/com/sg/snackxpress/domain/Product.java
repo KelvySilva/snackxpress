@@ -4,8 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.lang.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -26,19 +25,20 @@ public class Product extends AbstractEntity {
     @NotEmpty
     @NonNull
     @NotNull
-    @NotBlank(message = "Preço não pode ser vazio ou nulo")
+    @NotBlank(message = "Descrição não pode ser vazio ou nulo")
     protected StringBuffer description;
 
     protected BigDecimal cost;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Stock stock;
 
+    @Enumerated(EnumType.STRING)
     protected TYPE type;
 
     public enum TYPE{
 
-        COMPOSTO("COMPOSTO"),
+        COMPOSITE("COMPOSITE"),
         FINAL("FINAL");
 
         private String desc;
