@@ -1,6 +1,6 @@
 package br.com.sg.snackxpress.resource;
 
-import br.com.sg.snackxpress.domain.ProductFinal;
+import br.com.sg.snackxpress.domain.product.ProductFinal;
 import br.com.sg.snackxpress.service.ProductFinalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

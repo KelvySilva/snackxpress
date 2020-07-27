@@ -1,4 +1,4 @@
-package br.com.sg.snackxpress.domain;
+package br.com.sg.snackxpress.domain.product;
 
 import lombok.Getter;
 import lombok.Setter;

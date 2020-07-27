@@ -1,14 +1,12 @@
 package br.com.sg.snackxpress.service;
 
-import br.com.sg.snackxpress.domain.Recipe;
+import br.com.sg.snackxpress.domain.product.Recipe;
 import br.com.sg.snackxpress.error.ResourceNotFoundException;
 import br.com.sg.snackxpress.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import javax.validation.Validation;
-import javax.validation.executable.ValidateOnExecution;
 import java.util.List;
 
 @Service

@@ -1,6 +1,6 @@
 package br.com.sg.snackxpress.resource;
 
-import br.com.sg.snackxpress.domain.Ingredient;
+import br.com.sg.snackxpress.domain.product.Ingredient;
 import br.com.sg.snackxpress.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("v1")
+@CrossOrigin
 public class IngredientAPI {
 
     private IngredientService service;

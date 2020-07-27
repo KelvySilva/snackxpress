@@ -1,5 +1,6 @@
-package br.com.sg.snackxpress.domain;
+package br.com.sg.snackxpress.domain.product;
 
+import br.com.sg.snackxpress.domain.AbstractEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

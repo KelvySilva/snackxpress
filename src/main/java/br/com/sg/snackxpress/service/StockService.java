@@ -1,6 +1,6 @@
 package br.com.sg.snackxpress.service;
 
-import br.com.sg.snackxpress.domain.Stock;
+import br.com.sg.snackxpress.domain.product.Stock;
 import br.com.sg.snackxpress.repository.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

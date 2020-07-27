@@ -1,6 +1,4 @@
-package br.com.sg.snackxpress.domain;
-
-import br.com.sg.snackxpress.domain.Stock;
+package br.com.sg.snackxpress.domain.product;
 
 import java.io.Serializable;
 

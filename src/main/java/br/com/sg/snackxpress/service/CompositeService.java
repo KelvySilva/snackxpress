@@ -1,6 +1,6 @@
 package br.com.sg.snackxpress.service;
 
-import br.com.sg.snackxpress.domain.Composite;
+import br.com.sg.snackxpress.domain.product.Composite;
 import br.com.sg.snackxpress.error.ResourceNotFoundException;
 import br.com.sg.snackxpress.repository.CompositeRepository;
 import org.springframework.beans.factory.annotation.Autowired;

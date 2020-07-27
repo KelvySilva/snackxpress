@@ -1,6 +1,6 @@
 package br.com.sg.snackxpress.resource;
 
-import br.com.sg.snackxpress.domain.Recipe;
+import br.com.sg.snackxpress.domain.product.Recipe;
 import br.com.sg.snackxpress.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +10,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("v1")
+@CrossOrigin
 public class RecipeAPI {
 
     private RecipeService service;
