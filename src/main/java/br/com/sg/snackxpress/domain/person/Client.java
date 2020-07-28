@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 @Setter
 public class Client extends Person {
 
+
     private String address;
 
     private String addressNumber;

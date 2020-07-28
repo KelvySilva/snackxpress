@@ -67,4 +67,8 @@ public class IngredientService {
         }
         return this.repository.saveAndFlush(update);
     }
+
+    public void deleteOne(Long id) {
+        this.repository.deleteById(id);
+    }
 }

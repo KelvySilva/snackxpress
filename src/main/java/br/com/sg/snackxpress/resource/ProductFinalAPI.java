@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("v1")
+@CrossOrigin
 public class ProductFinalAPI {
 
     private ProductFinalService service;

@@ -38,4 +38,10 @@ public class IngredientAPI {
         return ResponseEntity.ok(this.service.updateOne(id, ingredient));
     }
 
+    @DeleteMapping(path = "/admin/ingredient/{id}")
+    public ResponseEntity deleteOne(@PathVariable Long id) {
+        this.service.deleteOne(id);
+        return ResponseEntity.accepted().build();
+    }
+
 }

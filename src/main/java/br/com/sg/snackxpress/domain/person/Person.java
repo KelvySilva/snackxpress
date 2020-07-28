@@ -14,6 +14,6 @@ public class Person extends AbstractEntity {
 
     private String name;
 
-    @Column(unique = true,nullable = true)
+    @Column(nullable = true)
     private String cpf;
 }
