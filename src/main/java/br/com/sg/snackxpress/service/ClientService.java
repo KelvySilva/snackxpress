@@ -40,6 +40,7 @@ public class ClientService {
 
     @Transactional
     public Client saveOne(Client client) {
+
         if (Objects.isNull(client.getName()) && Objects.isNull(client.getCpf())) {
             Client build = ClientBuilder.aClient().build();
             System.out.println(build);

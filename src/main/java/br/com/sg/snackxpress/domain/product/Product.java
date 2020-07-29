@@ -32,7 +32,7 @@ public class Product extends AbstractEntity {
     protected BigDecimal cost;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Stock stock;
+    private Stock stock = new Stock(0);
 
     @Enumerated(EnumType.STRING)
     protected TYPE type;

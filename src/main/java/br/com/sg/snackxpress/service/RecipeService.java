@@ -38,4 +38,15 @@ public class RecipeService {
     public Recipe saveOne(Recipe recipe) {
         return this.repository.save(recipe);
     }
+
+    public Recipe findOneByProductId(Long id) {
+        return this.repository.findByProductFinalId(id)
+                .orElseThrow(
+                        () -> new ResourceNotFoundException(
+                                String.format("Não existe receita para o produto com id %s " +
+                                        "ou não existe o produto com esse id", id)
+                        )
+
+                );
+    }
 }

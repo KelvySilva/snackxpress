@@ -23,10 +23,10 @@ public class SaleOrder extends AbstractEntity {
 
     private STATUS status;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Client client;
 
-    @OneToMany  (cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<SaleOrderItem> itemList;
 
     public enum STATUS {

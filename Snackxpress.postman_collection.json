@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"Presunto Americano\",\n    \"description\":\"Presunto Americano\",\n    \"cost\":25.65,\n    \"type\":\"COMPOSITE\",\n    \"stock\": {\n        \"quantity\":20\n    }\n}",
+							"raw": "{\n    \"name\":\"Picles\",\n    \"description\":\"Picles\",\n    \"cost\":14.89,\n    \"type\":\"COMPOSITE\",\n    \"stock\": {\n        \"quantity\":20\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -146,7 +146,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"1 Hamburguer de Siri + 1 Coca-cola Lata 350ml\",\n    \"description\":\"Delicioso lanche + Refrigerante Coca-cola\",\n    \"price\":32.80,\n    \"productList\": [\n        {\n            \"id\":55\n        },\n        {\n            \"id\":58\n        }\n    ]\n}",
+							"raw": "{\n    \"name\": \"Coca-Cola 2,5L\",\n    \"description\": \"Coca-Cola Pet 2,5L\",\n    \"cost\": 14.50,\n    \"type\": \"FINAL\",\n    \"price\": 20.89,\n    \"discount\": 0.00\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -164,6 +164,81 @@
 								"v1",
 								"admin",
 								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/product/129",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"product",
+								"129"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update One",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 122,\n    \"name\": \"Lamb Premium 200g\",\n    \"description\": \"Delicioso Hamburger de Cordeiro Angus\",\n    \"cost\": 27.95,\n    \"stock\": null,\n    \"type\": \"FINAL\",\n    \"price\": 45.00,\n    \"discount\": 0.00\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/admin/product/122",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"admin",
+								"product",
+								"122"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete One",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/admin/product/219",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"admin",
+								"product",
+								"219"
 							]
 						}
 					},
@@ -201,6 +276,258 @@
 		},
 		{
 			"name": "Recipe",
+			"item": [
+				{
+					"name": "List All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/recipes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/recipe/114",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"recipe",
+								"114"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find By Product id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/recipe/product/129",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"recipe",
+								"product",
+								"129"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "List all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/client/146",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"client",
+								"146"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"Jubileu Caciano\",\n        \"cpf\": \"156.698.678-98\",\n        \"address\": \"Rua da Coisas\",\n        \"addressNumber\": \"85\",\n        \"cep\": \"87083-390\",\n        \"city\": \"N/A\",\n        \"state\": \"N/A\",\n        \"phone\": \"N/A\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/admin/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"admin",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete One",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/admin/client/150",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"admin",
+								"client",
+								"150"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Save One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subtotal\": 0,\n    \"total\": 0,\n    \"discountAmount\": 0,\n    \"status\": \"PROGRESS\",\n    \"client\": {\n        \"id\": 153\n    },\n    \"itemList\": [\n        {\n            \"subtotal\": 0,\n            \"total\": 0,\n            \"discount\": 0,\n            \"products\": [\n                {\n                    \"id\": 129,\n                    \"name\": \"Burguer Premium 200g\",\n                    \"description\": \"Delicioso Hamburger de Angus\",\n                    \"cost\": 27.95,\n                    \"stock\": {\n                        \"id\": 224,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 45.00,\n                    \"discount\": 0.00\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/admin/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"admin",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/order/207",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"order",
+								"207"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Composite",
 			"item": [
 				{
 					"name": "List All",

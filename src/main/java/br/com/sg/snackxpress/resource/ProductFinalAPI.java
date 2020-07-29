@@ -37,6 +37,12 @@ public class ProductFinalAPI {
         return ResponseEntity.ok(this.service.updateOne(id, productFinal));
     }
 
+    @DeleteMapping(path = "/admin/product/{id}")
+    public ResponseEntity deleteOne(@PathVariable Long id) {
+        this.service.deleteOne(id);
+        return ResponseEntity.accepted().build();
+    }
+
 
 
 }

@@ -16,4 +16,6 @@ public class ProductFinal extends Product{
 
     @Column(columnDefinition = "NUMERIC(19,2) DEFAULT 0.00")
     private BigDecimal discount;
+
+
 }

@@ -30,6 +30,11 @@ public class RecipeAPI {
         return ResponseEntity.ok(this.service.findOne(id));
     }
 
+    @GetMapping(path = "/protected/recipe/product/{id}")
+    public ResponseEntity findOneByProductId(@PathVariable Long id) {
+        return ResponseEntity.ok(this.service.findOneByProductId(id));
+    }
+
     @PostMapping(path = "/admin/recipe")
     public ResponseEntity saveOne(@Valid @RequestBody Recipe recipe) {
         Recipe recipe1 = this.service.saveOne(recipe);

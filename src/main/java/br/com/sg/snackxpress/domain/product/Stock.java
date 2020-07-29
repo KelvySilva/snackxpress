@@ -15,11 +15,13 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Stock extends AbstractEntity {
 
-    @Column(columnDefinition = "INTEGER DEFAULT 0")
+    @Column(columnDefinition = "INTEGER DEFAULT 0", nullable = false)
     private Integer quantity;
 
+    public Stock(Integer quantity) {
+        this.quantity = quantity;
+    }
 
 }

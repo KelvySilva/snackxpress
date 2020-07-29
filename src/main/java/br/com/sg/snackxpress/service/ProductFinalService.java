@@ -1,6 +1,7 @@
 package br.com.sg.snackxpress.service;
 
 import br.com.sg.snackxpress.domain.product.ProductFinal;
+import br.com.sg.snackxpress.domain.product.Stock;
 import br.com.sg.snackxpress.error.ResourceNotFoundException;
 import br.com.sg.snackxpress.repository.ProductFinalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class ProductFinalService {
         return this.repository.save(product);
     }
 
-
+    @Transactional
     public ProductFinal updateOne(Long id, ProductFinal productFinal) {
         Optional<ProductFinal> productOptional = this.repository.findById(id);
         if (!productOptional.isPresent()){
@@ -57,17 +58,31 @@ public class ProductFinalService {
         if (Objects.nonNull(productFinal.getType()) && !(update.getType().equals(productFinal.getType()))) {
             update.setType(productFinal.getType());
         }
-        if (Objects.nonNull(productFinal.getStock()) && !(update.getStock().equals(productFinal.getStock()))) {
+        if (Objects.nonNull(productFinal.getStock()) && Objects.nonNull(update.getStock()) && !(update.getStock().equals(productFinal.getStock()))) {
             update.setStock(productFinal.getStock());
         }
+        if (Objects.nonNull(productFinal.getDiscount()) && !(update.getDiscount().equals(productFinal.getDiscount()))) {
+            update.setDiscount(productFinal.getDiscount());
+        }
+        if (Objects.isNull(update.getStock())) {
+            update.setStock(new Stock(0));
+        }
+
         if (
                 Objects.nonNull(productFinal.getStock()) &&
                 !(update.getStock().equals(productFinal.getStock())) &&
                 Objects.nonNull(productFinal.getStock().getId()) &&
-                update.getStock().getClass().equals(productFinal.getStock().getId())
+                update.getStock().getId().equals(productFinal.getStock().getId())
         ) {
             update.setStock(productFinal.getStock());
         }
         return this.repository.saveAndFlush(update);
+    }
+
+    public void deleteOne(Long id) {
+        if (!this.repository.findById(id).isPresent()) {
+            throw new ResourceNotFoundException(String.format("Produco com ID %s não encontrado!", id));
+        }
+        this.repository.deleteById(id);
     }
 }
