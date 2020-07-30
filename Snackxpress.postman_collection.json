@@ -552,6 +552,281 @@
 				}
 			],
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Menu Item",
+			"item": [
+				{
+					"name": "List All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/menu/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"menu",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/menu/item/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"menu",
+								"item",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"discountAmount\": 5.00,\n    \"total\": 0.00,\n    \"subtotal\": 0.00,\n    \"list\": [\n        {\n            \"id\": 135,\n            \"name\": \"Coca-cola 350ml\",\n            \"description\": \"Coca-cola Lata 350ml\",\n            \"cost\": 8.96,\n            \"stock\": {\n                \"id\": 136,\n                \"quantity\": 16\n            },\n            \"type\": \"FINAL\",\n            \"price\": 12.80,\n            \"discount\": 0.00\n        },\n        {\n            \"id\": 122,\n            \"name\": \"Lamb Premium 200g\",\n            \"description\": \"Delicioso Hamburger de Cordeiro Angus\",\n            \"cost\": 27.95,\n            \"stock\": {\n                \"id\": 228,\n                \"quantity\": 0\n            },\n            \"type\": \"FINAL\",\n            \"price\": 45.00,\n            \"discount\": 0.00\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/admin/menu/item",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"admin",
+								"menu",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update One",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 251,\n    \"discountAmount\": 5.00,\n    \"subtotal\": 57.80,\n    \"total\": 57.80,\n    \"list\": [\n        {\n            \"id\": 135,\n            \"name\": \"Coca-cola 350ml\",\n            \"description\": \"Coca-cola Lata 350ml\",\n            \"cost\": 8.96,\n            \"stock\": {\n                \"id\": 136,\n                \"quantity\": 16\n            },\n            \"type\": \"FINAL\",\n            \"price\": 12.80,\n            \"discount\": 0.00\n        },\n        {\n            \"id\": 115,\n            \"name\": \"Chicken Premium 200g\",\n            \"description\": \"Delicioso Hamburger de Frango Angus\",\n            \"cost\": 27.95,\n            \"stock\": {\n                \"id\": 227,\n                \"quantity\": 0\n            },\n            \"type\": \"FINAL\",\n            \"price\": 45.00,\n            \"discount\": 0.00\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/admin/menu/item/251",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"admin",
+								"menu",
+								"item",
+								"251"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "list All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/menus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"menus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Menu Snackxpress (Seg a Sex)\",\n    \"list\": [\n        {\n            \"id\": 246,\n            \"discountAmount\": 5.00,\n            \"subtotal\": 45.00,\n            \"total\": 40.00,\n            \"list\": [\n                {\n                    \"id\": 129,\n                    \"name\": \"Burguer Premium 200g\",\n                    \"description\": \"Delicioso Hamburger de Angus\",\n                    \"cost\": 27.95,\n                    \"stock\": {\n                        \"id\": 224,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 45.00,\n                    \"discount\": 0.00\n                }\n            ]\n        },\n        {\n            \"id\": 245,\n            \"discountAmount\": 0.00,\n            \"subtotal\": 12.80,\n            \"total\": 12.80,\n            \"list\": [\n                {\n                    \"id\": 135,\n                    \"name\": \"Coca-cola 350ml\",\n                    \"description\": \"Coca-cola Lata 350ml\",\n                    \"cost\": 8.96,\n                    \"stock\": {\n                        \"id\": 136,\n                        \"quantity\": 16\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 12.80,\n                    \"discount\": 0.00\n                }\n            ]\n        },\n        {\n            \"id\": 247,\n            \"discountAmount\": 5.00,\n            \"subtotal\": 45.00,\n            \"total\": 40.00,\n            \"list\": [\n                {\n                    \"id\": 122,\n                    \"name\": \"Lamb Premium 200g\",\n                    \"description\": \"Delicioso Hamburger de Cordeiro Angus\",\n                    \"cost\": 27.95,\n                    \"stock\": {\n                        \"id\": 228,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 45.00,\n                    \"discount\": 0.00\n                }\n            ]\n        },\n        {\n            \"id\": 248,\n            \"discountAmount\": 5.00,\n            \"subtotal\": 16.89,\n            \"total\": 11.89,\n            \"list\": [\n                {\n                    \"id\": 222,\n                    \"name\": \"Coca-Cola 2L\",\n                    \"description\": \"Coca-Cola Pet 2L\",\n                    \"cost\": 10.50,\n                    \"stock\": {\n                        \"id\": 223,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 16.89,\n                    \"discount\": 0.00\n                }\n            ]\n        },\n        {\n            \"id\": 249,\n            \"discountAmount\": 5.00,\n            \"subtotal\": 20.89,\n            \"total\": 15.89,\n            \"list\": [\n                {\n                    \"id\": 225,\n                    \"name\": \"Coca-Cola 2,5L\",\n                    \"description\": \"Coca-Cola Pet 2,5L\",\n                    \"cost\": 14.50,\n                    \"stock\": {\n                        \"id\": 226,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 20.89,\n                    \"discount\": 0.00\n                }\n            ]\n        },\n        {\n            \"id\": 250,\n            \"discountAmount\": 0.00,\n            \"subtotal\": 45.00,\n            \"total\": 45.00,\n            \"list\": [\n                {\n                    \"id\": 115,\n                    \"name\": \"Chicken Premium 200g\",\n                    \"description\": \"Delicioso Hamburger de Frango Angus\",\n                    \"cost\": 27.95,\n                    \"stock\": {\n                        \"id\": 227,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 45.00,\n                    \"discount\": 0.00\n                }\n            ]\n        },\n        {\n            \"id\": 251,\n            \"discountAmount\": 5.00,\n            \"subtotal\": 57.80,\n            \"total\": 52.80,\n            \"list\": [\n                {\n                    \"id\": 135,\n                    \"name\": \"Coca-cola 350ml\",\n                    \"description\": \"Coca-cola Lata 350ml\",\n                    \"cost\": 8.96,\n                    \"stock\": {\n                        \"id\": 136,\n                        \"quantity\": 16\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 12.80,\n                    \"discount\": 0.00\n                },\n                {\n                    \"id\": 115,\n                    \"name\": \"Chicken Premium 200g\",\n                    \"description\": \"Delicioso Hamburger de Frango Angus\",\n                    \"cost\": 27.95,\n                    \"stock\": {\n                        \"id\": 227,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 45.00,\n                    \"discount\": 0.00\n                }\n            ]\n        },\n        {\n            \"id\": 252,\n            \"discountAmount\": 5.00,\n            \"subtotal\": 57.80,\n            \"total\": 52.80,\n            \"list\": [\n                {\n                    \"id\": 135,\n                    \"name\": \"Coca-cola 350ml\",\n                    \"description\": \"Coca-cola Lata 350ml\",\n                    \"cost\": 8.96,\n                    \"stock\": {\n                        \"id\": 136,\n                        \"quantity\": 16\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 12.80,\n                    \"discount\": 0.00\n                },\n                {\n                    \"id\": 129,\n                    \"name\": \"Burguer Premium 200g\",\n                    \"description\": \"Delicioso Hamburger de Angus\",\n                    \"cost\": 27.95,\n                    \"stock\": {\n                        \"id\": 224,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 45.00,\n                    \"discount\": 0.00\n                }\n            ]\n        },\n        {\n            \"id\": 253,\n            \"discountAmount\": 5.00,\n            \"subtotal\": 57.80,\n            \"total\": 52.80,\n            \"list\": [\n                {\n                    \"id\": 135,\n                    \"name\": \"Coca-cola 350ml\",\n                    \"description\": \"Coca-cola Lata 350ml\",\n                    \"cost\": 8.96,\n                    \"stock\": {\n                        \"id\": 136,\n                        \"quantity\": 16\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 12.80,\n                    \"discount\": 0.00\n                },\n                {\n                    \"id\": 122,\n                    \"name\": \"Lamb Premium 200g\",\n                    \"description\": \"Delicioso Hamburger de Cordeiro Angus\",\n                    \"cost\": 27.95,\n                    \"stock\": {\n                        \"id\": 228,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 45.00,\n                    \"discount\": 0.00\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/admin/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"admin",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/menu/254",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"menu",
+								"254"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PaymentMethods",
+			"item": [
+				{
+					"name": "list All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/payment/methods",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"payment",
+								"methods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/payment/method/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"payment",
+								"method",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Cartão de Débito\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/admin/payment/method",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"admin",
+								"payment",
+								"method"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
