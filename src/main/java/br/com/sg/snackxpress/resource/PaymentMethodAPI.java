@@ -21,7 +21,7 @@ public class PaymentMethodAPI {
     public ResponseEntity listAll(){
         return ResponseEntity.ok(this.service.listAll());
     }
-
+  
     @GetMapping(path = "/protected/payment/method/{id}")
     public ResponseEntity findOne(@PathVariable Long id) {
         return ResponseEntity.ok(this.service.findOne(id));
