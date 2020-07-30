@@ -23,5 +23,18 @@ public class Client extends Person {
 
     private String phone;
 
+    @Override
+    public String toString() {
+        return "Client{" +
+                "\n id='" + this.getId() + '\'' +
+                "\n, address='" + address + '\'' +
+                "\n, addressNumber='" + addressNumber + '\'' +
+                "\n, cep='" + cep + '\'' +
+                "\n, city='" + city + '\'' +
+                "\n, state='" + state + '\'' +
+                "\n, phone='" + phone + '\'' +
+                "\n"+'}';
+    }
+
 
 }

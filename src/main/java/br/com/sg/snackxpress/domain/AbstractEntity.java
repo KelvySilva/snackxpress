@@ -19,7 +19,7 @@ public class AbstractEntity implements Serializable {
 
     @Id
     @GeneratedValue
-    private Long id;
+    protected Long id;
 
     /**
      * API's e Ordem de Cadastro

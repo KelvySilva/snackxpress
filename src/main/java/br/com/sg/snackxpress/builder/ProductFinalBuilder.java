@@ -7,13 +7,13 @@ import br.com.sg.snackxpress.domain.product.Stock;
 import java.math.BigDecimal;
 
 public final class ProductFinalBuilder {
-    protected String name;
-    protected StringBuffer description;
-    protected BigDecimal cost;
-    protected Product.TYPE type;
-    private BigDecimal price;
-    private BigDecimal discount;
-    private Stock stock;
+    protected String name = "Produto Teste 01";
+    protected StringBuffer description = new StringBuffer("Um produto para teste");
+    protected BigDecimal cost = BigDecimal.ZERO;
+    protected Product.TYPE type = Product.TYPE.FINAL;
+    private BigDecimal price = BigDecimal.TEN;
+    private BigDecimal discount = BigDecimal.ZERO;
+    private Stock stock = new Stock(0);
     private Long id;
 
     private ProductFinalBuilder() {

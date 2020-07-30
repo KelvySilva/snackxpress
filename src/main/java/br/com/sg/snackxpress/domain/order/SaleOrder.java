@@ -29,6 +29,19 @@ public class SaleOrder extends AbstractEntity {
     @OneToMany(cascade = CascadeType.ALL)
     private List<SaleOrderItem> itemList;
 
+    @Override
+    public String toString() {
+        return "SaleOrder{" +
+                "\n id=" + this.getId() +
+                "\n, subtotal=" + subtotal +
+                "\n, total=" + total +
+                "\n, discountAmount=" + discountAmount +
+                "\n, status=" + status +
+                "\n, client=" + client +
+                "\n, itemList=" + itemList +
+                "\n"+'}';
+    }
+
     public enum STATUS {
 
         PROGRESS("ABERTO"),

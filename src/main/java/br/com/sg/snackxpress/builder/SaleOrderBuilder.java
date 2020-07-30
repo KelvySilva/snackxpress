@@ -1,9 +1,11 @@
-package br.com.sg.snackxpress.domain.order;
+package br.com.sg.snackxpress.builder;
 
-import br.com.sg.snackxpress.builder.ClientBuilder;
+import br.com.sg.snackxpress.domain.order.SaleOrder;
+import br.com.sg.snackxpress.domain.order.SaleOrderItem;
 import br.com.sg.snackxpress.domain.person.Client;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 
 public final class SaleOrderBuilder {
@@ -12,7 +14,7 @@ public final class SaleOrderBuilder {
     private BigDecimal discountAmount = BigDecimal.ZERO;
     private SaleOrder.STATUS status = SaleOrder.STATUS.PROGRESS;
     private Client client = ClientBuilder.aClient().build();
-    private List<SaleOrderItem> itemList;
+    private List<SaleOrderItem> itemList = Arrays.asList(new SaleOrderItem[]{SaleOrderItemBuilder.aSaleOrderItem().build()});
     private Long id;
 
     private SaleOrderBuilder() {

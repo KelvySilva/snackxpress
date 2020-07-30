@@ -23,8 +23,17 @@ public class SaleOrderItem extends AbstractEntity {
 
     private BigDecimal discount;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<ProductFinal> products;
 
-
+    @Override
+    public String toString() {
+        return "SaleOrderItem{" +
+                "\n  id=" + this.getId() +
+                "\n, subtotal=" + subtotal +
+                "\n, total=" + total +
+                "\n, discount=" + discount +
+                "\n, products=" + products +
+                "\n"+'}';
+    }
 }

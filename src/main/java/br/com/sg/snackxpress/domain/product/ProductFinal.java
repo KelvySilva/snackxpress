@@ -17,5 +17,16 @@ public class ProductFinal extends Product{
     @Column(columnDefinition = "NUMERIC(19,2) DEFAULT 0.00")
     private BigDecimal discount;
 
-
+    @Override
+    public String toString() {
+        return "ProductFinal{" +
+                "\n id=" + this.getId() +
+                "\n, price=" + price +
+                "\n, discount=" + discount +
+                "\n, name='" + name + '\'' +
+                "\n, description=" + description +
+                "\n, cost=" + cost +
+                "\n, type=" + type +
+                "\n"+'}';
+    }
 }

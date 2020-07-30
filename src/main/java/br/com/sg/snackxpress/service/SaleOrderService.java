@@ -76,11 +76,16 @@ public class SaleOrderService {
 
             return this.repository.save(updatable);
         }
-        if (Objects.isNull(saleOrder.getClient()) || Objects.isNull(saleOrder.getClient().getCpf()) ) {
+        if (Objects.isNull(saleOrder.getClient()) || Objects.isNull(saleOrder.getClient().getId())  || Objects.isNull(saleOrder.getClient().getCpf()) ) {
             Client build = ClientBuilder.aClient().build();
             saleOrder.setClient(build);
+            saleOrder.setItemList(resolveList(saleOrder.getItemList()));
+            SaleOrder updatable = resolveOrder(saleOrder);
+            return this.repository.save(updatable);
+        }else {
+            throw new ResourceNotFoundException("Não foi possível Realizar a operação!");
         }
-        return this.repository.save(saleOrder);
+
 
     }
 

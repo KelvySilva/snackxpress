@@ -11,6 +11,7 @@ public final class ClientBuilder {
     private String phone = "N/A";
     private String name = "CLIENTE FINAL";
     private String cpf = "N/A";
+    private Long id;
 
     private ClientBuilder() {
     }
@@ -21,6 +22,11 @@ public final class ClientBuilder {
 
     public ClientBuilder address(String address) {
         this.address = address;
+        return this;
+    }
+
+    public ClientBuilder id(Long id) {
+        this.id = id;
         return this;
     }
 
@@ -69,6 +75,7 @@ public final class ClientBuilder {
         client.setPhone(phone);
         client.setName(name);
         client.setCpf(cpf);
+        client.setId(id);
         return client;
     }
 }
