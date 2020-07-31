@@ -44,4 +44,9 @@ public class IngredientAPI {
         return ResponseEntity.accepted().build();
     }
 
+    @GetMapping(path = "/protected/ingredients/outoffstock")
+    public ResponseEntity findAllOutOfStock() {
+        return ResponseEntity.ok(this.service.findOutOfStock());
+    }
+
 }

@@ -32,7 +32,7 @@ public class ClientAPI {
     }
 
     @PostMapping(path = "/admin/client")
-    public ResponseEntity saveOne(Client client) {
+    public ResponseEntity saveOne(@RequestBody Client client) {
         return ResponseEntity.ok(this.service.saveOne(client));
     }
 

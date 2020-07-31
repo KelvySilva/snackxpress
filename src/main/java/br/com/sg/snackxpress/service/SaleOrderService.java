@@ -145,4 +145,8 @@ public class SaleOrderService {
                 .reduce(BigDecimal.ZERO,BigDecimal::add));
         return saleOrder;
     }
+
+    public List<SaleOrder> findByClientId(Long id) {
+        return this.repository.findByClientId(id);
+    }
 }

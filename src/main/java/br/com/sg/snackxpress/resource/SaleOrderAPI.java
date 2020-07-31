@@ -3,6 +3,7 @@ package br.com.sg.snackxpress.resource;
 import br.com.sg.snackxpress.domain.order.SaleOrder;
 import br.com.sg.snackxpress.service.SaleOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,9 +23,14 @@ public class SaleOrderAPI {
         return ResponseEntity.ok(this.service.listAll());
     }
 
-    @GetMapping(path = "protected/order/{id}")
+    @GetMapping(path = "/protected/order/{id}")
     public ResponseEntity findOne(@PathVariable Long id) {
         return ResponseEntity.ok(this.service.findOne(id));
+    }
+
+    @GetMapping(path = "/protected/order/client/{id}")
+    public ResponseEntity findByClient(@PathVariable Long id) {
+        return ResponseEntity.ok(this.service.findByClientId(id));
     }
 
     @PostMapping(path = "/admin/order")

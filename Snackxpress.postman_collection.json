@@ -111,6 +111,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Out Of Stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/ingredients/outoffstock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"ingredients",
+								"outoffstock"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -399,7 +421,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"name\": \"Jubileu Caciano\",\n        \"cpf\": \"156.698.678-98\",\n        \"address\": \"Rua da Coisas\",\n        \"addressNumber\": \"85\",\n        \"cep\": \"87083-390\",\n        \"city\": \"N/A\",\n        \"state\": \"N/A\",\n        \"phone\": \"N/A\"\n    }",
+							"raw": "{\n    \"name\": \"Jubileu Caciano\",\n    \"cpf\": \"156.698.678-98\",\n    \"address\": \"Rua da Coisas\",\n    \"addressNumber\": \"85\",\n    \"cep\": \"87083-390\",\n    \"city\": \"Maringá\",\n    \"state\": \"Paraná\",\n    \"phone\": \"(44)98888-7777\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -428,7 +450,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/v1/admin/client/150",
+							"raw": "http://localhost:8082/v1/admin/client/259",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -438,7 +460,7 @@
 								"v1",
 								"admin",
 								"client",
-								"150"
+								"259"
 							]
 						}
 					},
@@ -457,7 +479,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"subtotal\": 0,\n    \"total\": 0,\n    \"discountAmount\": 0,\n    \"status\": \"PROGRESS\",\n    \"client\": {\n        \"id\": 153\n    },\n    \"itemList\": [\n        {\n            \"subtotal\": 0,\n            \"total\": 0,\n            \"discount\": 0,\n            \"products\": [\n                {\n                    \"id\": 129,\n                    \"name\": \"Burguer Premium 200g\",\n                    \"description\": \"Delicioso Hamburger de Angus\",\n                    \"cost\": 27.95,\n                    \"stock\": {\n                        \"id\": 224,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 45.00,\n                    \"discount\": 0.00\n                }\n            ]\n        }\n    ]\n}",
+							"raw": "{\n    \"subtotal\": 0,\n    \"total\": 0,\n    \"discountAmount\": 0,\n    \"status\": \"PROGRESS\",\n    \"client\": {\n        \"id\": 260\n    },\n    \"itemList\": [\n        {\n            \"subtotal\": 0,\n            \"total\": 0,\n            \"discount\": 0,\n            \"products\": [\n                {\n                    \"id\": 129,\n                    \"name\": \"Burguer Premium 200g\",\n                    \"description\": \"Delicioso Hamburger de Angus\",\n                    \"cost\": 27.95,\n                    \"stock\": {\n                        \"id\": 224,\n                        \"quantity\": 0\n                    },\n                    \"type\": \"FINAL\",\n                    \"price\": 45.00,\n                    \"discount\": 0.00\n                }\n            ]\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -507,7 +529,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/v1/protected/order/207",
+							"raw": "http://localhost:8082/v1/protected/order/client/153",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -517,7 +539,30 @@
 								"v1",
 								"protected",
 								"order",
-								"207"
+								"client",
+								"153"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Total By Client",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/v1/protected/order/total",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"protected",
+								"order",
+								"total"
 							]
 						}
 					},
@@ -584,7 +629,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/v1/protected/menu/item/1",
+							"raw": "http://localhost:8082/v1/protected/menu/item/250",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -595,7 +640,7 @@
 								"protected",
 								"menu",
 								"item",
-								"1"
+								"250"
 							]
 						}
 					},
@@ -639,7 +684,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 251,\n    \"discountAmount\": 5.00,\n    \"subtotal\": 57.80,\n    \"total\": 57.80,\n    \"list\": [\n        {\n            \"id\": 135,\n            \"name\": \"Coca-cola 350ml\",\n            \"description\": \"Coca-cola Lata 350ml\",\n            \"cost\": 8.96,\n            \"stock\": {\n                \"id\": 136,\n                \"quantity\": 16\n            },\n            \"type\": \"FINAL\",\n            \"price\": 12.80,\n            \"discount\": 0.00\n        },\n        {\n            \"id\": 115,\n            \"name\": \"Chicken Premium 200g\",\n            \"description\": \"Delicioso Hamburger de Frango Angus\",\n            \"cost\": 27.95,\n            \"stock\": {\n                \"id\": 227,\n                \"quantity\": 0\n            },\n            \"type\": \"FINAL\",\n            \"price\": 45.00,\n            \"discount\": 0.00\n        }\n    ]\n}",
+							"raw": "{\n    \"id\": 250,\n    \"discountAmount\": 0.00,\n    \"category\": \"SNACK\",\n    \"list\": [\n        {\n            \"id\": 115,\n            \"name\": \"Chicken Premium 200g\",\n            \"description\": \"Delicioso Hamburger de Frango Angus\",\n            \"cost\": 27.95,\n            \"stock\": {\n                \"id\": 227,\n                \"quantity\": 0\n            },\n            \"type\": \"FINAL\",\n            \"price\": 45.00,\n            \"discount\": 0.00\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -647,7 +692,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/v1/admin/menu/item/251",
+							"raw": "http://localhost:8082/v1/admin/menu/item/250",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -658,7 +703,7 @@
 								"admin",
 								"menu",
 								"item",
-								"251"
+								"250"
 							]
 						}
 					},

@@ -56,6 +56,7 @@ public class ProductMenuItemService {
                     ProductMenuItem productMenuItem = this.resolveItem(item);
                     update.setDiscountAmount(productMenuItem.getDiscountAmount());
                     update.setTotal(productMenuItem.getTotal());
+                    update.setCategory(item.getCategory());
                     update.setSubtotal(productMenuItem.getSubtotal());
                     update.setList(productMenuItem.getList());
                 }

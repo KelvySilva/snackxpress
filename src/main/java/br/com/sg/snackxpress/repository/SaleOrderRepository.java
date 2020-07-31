@@ -6,9 +6,14 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 public interface SaleOrderRepository  extends JpaRepository<SaleOrder, Long> {
 
     @Modifying
     @Query("update SaleOrder so set so.status = :status where so.id = :id")
     SaleOrder setStatusForSaleOrder(@Param("id") Long id,@Param("status") SaleOrder.STATUS status);
+
+    List<SaleOrder> findByClientId(Long id);
+
 }

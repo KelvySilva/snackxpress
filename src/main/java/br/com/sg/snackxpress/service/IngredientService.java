@@ -71,4 +71,9 @@ public class IngredientService {
     public void deleteOne(Long id) {
         this.repository.deleteById(id);
     }
+
+    public List<Ingredient> findOutOfStock(){
+        List<Ingredient> allByStockQuantityIs = this.repository.findAllByStockQuantityIs(0);
+        return allByStockQuantityIs;
+    }
 }

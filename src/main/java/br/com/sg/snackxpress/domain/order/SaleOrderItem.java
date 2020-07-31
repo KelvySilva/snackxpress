@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import java.math.BigDecimal;
 import java.util.List;
@@ -23,7 +24,7 @@ public class SaleOrderItem extends AbstractEntity {
 
     private BigDecimal discount;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany( fetch = FetchType.LAZY)
     private List<ProductFinal> products;
 
     @Override
